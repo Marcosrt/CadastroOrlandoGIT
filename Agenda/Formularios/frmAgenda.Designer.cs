@@ -30,6 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgenda));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tstSalvar = new System.Windows.Forms.ToolStripButton();
+            this.tstExcluir = new System.Windows.Forms.ToolStripButton();
+            this.tstPesquisar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tstSair = new System.Windows.Forms.ToolStripButton();
+            this.errError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboOpcao = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.grpDados = new System.Windows.Forms.GroupBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,17 +65,163 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tstSalvar = new System.Windows.Forms.ToolStripButton();
-            this.tstExcluir = new System.Windows.Forms.ToolStripButton();
-            this.tstPesquisar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tstSair = new System.Windows.Forms.ToolStripButton();
-            this.errError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.grpDados.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.grpDados.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstSalvar,
+            this.tstExcluir,
+            this.tstPesquisar,
+            this.toolStripSeparator1,
+            this.tstSair});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(814, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tstSalvar
+            // 
+            this.tstSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstSalvar.Image = ((System.Drawing.Image)(resources.GetObject("tstSalvar.Image")));
+            this.tstSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstSalvar.Name = "tstSalvar";
+            this.tstSalvar.Size = new System.Drawing.Size(42, 22);
+            this.tstSalvar.Text = "&Salvar";
+            this.tstSalvar.Click += new System.EventHandler(this.tstSalvar_Click);
+            // 
+            // tstExcluir
+            // 
+            this.tstExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstExcluir.Image = ((System.Drawing.Image)(resources.GetObject("tstExcluir.Image")));
+            this.tstExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstExcluir.Name = "tstExcluir";
+            this.tstExcluir.Size = new System.Drawing.Size(45, 22);
+            this.tstExcluir.Text = "&Excluir";
+            // 
+            // tstPesquisar
+            // 
+            this.tstPesquisar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("tstPesquisar.Image")));
+            this.tstPesquisar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstPesquisar.Name = "tstPesquisar";
+            this.tstPesquisar.Size = new System.Drawing.Size(61, 22);
+            this.tstPesquisar.Text = "&Pesquisar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tstSair
+            // 
+            this.tstSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tstSair.Image = ((System.Drawing.Image)(resources.GetObject("tstSair.Image")));
+            this.tstSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tstSair.Name = "tstSair";
+            this.tstSair.Size = new System.Drawing.Size(30, 22);
+            this.tstSair.Text = "S&air";
+            this.tstSair.Click += new System.EventHandler(this.tstSair_Click);
+            // 
+            // errError
+            // 
+            this.errError.ContainerControl = this;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 28);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(790, 300);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgvClientes);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.txtFiltro);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.cboOpcao);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(782, 274);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Pesquisar";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(17, 58);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.Size = new System.Drawing.Size(759, 210);
+            this.dgvClientes.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Opção";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(165, 32);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(611, 20);
+            this.txtFiltro.TabIndex = 2;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(162, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Filtro";
+            // 
+            // cboOpcao
+            // 
+            this.cboOpcao.FormattingEnabled = true;
+            this.cboOpcao.Items.AddRange(new object[] {
+            "CÓDIGO",
+            "NOME",
+            "CELULAR"});
+            this.cboOpcao.Location = new System.Drawing.Point(17, 31);
+            this.cboOpcao.Name = "cboOpcao";
+            this.cboOpcao.Size = new System.Drawing.Size(121, 21);
+            this.cboOpcao.TabIndex = 0;
+            this.cboOpcao.Text = "NOME";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grpDados);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(782, 274);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Dados do Cliente";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // grpDados
             // 
@@ -84,12 +245,11 @@
             this.grpDados.Controls.Add(this.txtCodigo);
             this.grpDados.Controls.Add(this.label1);
             this.grpDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDados.Location = new System.Drawing.Point(12, 82);
+            this.grpDados.Location = new System.Drawing.Point(-4, 20);
             this.grpDados.Name = "grpDados";
             this.grpDados.Size = new System.Drawing.Size(790, 234);
-            this.grpDados.TabIndex = 0;
+            this.grpDados.TabIndex = 1;
             this.grpDados.TabStop = false;
-            this.grpDados.Text = "Dados do Cliente";
             // 
             // txtNumero
             // 
@@ -218,7 +378,7 @@
             this.btnCEP.Size = new System.Drawing.Size(22, 23);
             this.btnCEP.TabIndex = 3;
             this.btnCEP.UseVisualStyleBackColor = true;
-            this.btnCEP.Click += new System.EventHandler(this.btnCEP_Click);
+            this.btnCEP.Click += new System.EventHandler(this.btnCEP_Click_1);
             // 
             // label3
             // 
@@ -265,95 +425,54 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tstSalvar,
-            this.tstExcluir,
-            this.tstPesquisar,
-            this.toolStripSeparator1,
-            this.tstSair});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(814, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tstSalvar
-            // 
-            this.tstSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstSalvar.Image = ((System.Drawing.Image)(resources.GetObject("tstSalvar.Image")));
-            this.tstSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstSalvar.Name = "tstSalvar";
-            this.tstSalvar.Size = new System.Drawing.Size(42, 22);
-            this.tstSalvar.Text = "&Salvar";
-            this.tstSalvar.Click += new System.EventHandler(this.tstSalvar_Click);
-            // 
-            // tstExcluir
-            // 
-            this.tstExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstExcluir.Image = ((System.Drawing.Image)(resources.GetObject("tstExcluir.Image")));
-            this.tstExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstExcluir.Name = "tstExcluir";
-            this.tstExcluir.Size = new System.Drawing.Size(45, 22);
-            this.tstExcluir.Text = "&Excluir";
-            // 
-            // tstPesquisar
-            // 
-            this.tstPesquisar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("tstPesquisar.Image")));
-            this.tstPesquisar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstPesquisar.Name = "tstPesquisar";
-            this.tstPesquisar.Size = new System.Drawing.Size(61, 22);
-            this.tstPesquisar.Text = "&Pesquisar";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tstSair
-            // 
-            this.tstSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tstSair.Image = ((System.Drawing.Image)(resources.GetObject("tstSair.Image")));
-            this.tstSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tstSair.Name = "tstSair";
-            this.tstSair.Size = new System.Drawing.Size(30, 22);
-            this.tstSair.Text = "S&air";
-            this.tstSair.Click += new System.EventHandler(this.tstSair_Click);
-            // 
-            // errError
-            // 
-            this.errError.ContainerControl = this;
-            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 340);
             this.ControlBox = false;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.grpDados);
             this.KeyPreview = true;
             this.Name = "frmAgenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de Contatos:";
             this.Load += new System.EventHandler(this.frmAgenda_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmAgenda_KeyPress);
-            this.grpDados.ResumeLayout(false);
-            this.grpDados.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errError)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.grpDados.ResumeLayout(false);
+            this.grpDados.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tstSalvar;
+        private System.Windows.Forms.ToolStripButton tstExcluir;
+        private System.Windows.Forms.ToolStripButton tstPesquisar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tstSair;
+        private System.Windows.Forms.ErrorProvider errError;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboOpcao;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox grpDados;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox mskCelular;
         private System.Windows.Forms.MaskedTextBox mskCEP;
         private System.Windows.Forms.Label label8;
@@ -371,15 +490,6 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tstSalvar;
-        private System.Windows.Forms.ToolStripButton tstExcluir;
-        private System.Windows.Forms.ToolStripButton tstPesquisar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tstSair;
-        private System.Windows.Forms.ErrorProvider errError;
     }
 }
 

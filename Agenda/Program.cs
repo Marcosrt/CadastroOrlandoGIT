@@ -16,7 +16,7 @@ namespace Agenda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Agenda.Formularios.frmProdutos());
+            Application.Run(new frmAgenda());
         }
     }
 }
